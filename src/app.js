@@ -13,6 +13,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// Imprime la variable de entorno para depuración
+console.log('MONGO_URL:', process.env.MONGO_URL);
+
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
