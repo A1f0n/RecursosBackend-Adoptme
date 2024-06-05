@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import dotenv from "dotenv";
+import cors from "cors";
 
 import usersRouter from './routes/users.router.js';
 import petsRouter from './routes/pets.router.js';
