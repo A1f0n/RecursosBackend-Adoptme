@@ -27,7 +27,13 @@ mongoose.connect(process.env.MONGO_URL, {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+
+// Configuración de CORS para permitir el puerto 3000
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 app.use('/api/users', usersRouter);
 app.use('/api/pets', petsRouter);
